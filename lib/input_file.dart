@@ -4,6 +4,8 @@ import 'icon_content.dart';
 import 'reusable_card.dart';
 import 'constants.dart';
 import 'result_page.dart';
+import 'bottom_button.dart';
+import 'round_icon_button.dart';
 
 enum Gender { male, femlale }
 
@@ -214,49 +216,5 @@ class _InputPageState extends State<InputPage> {
             )
           ],
         ));
-  }
-}
-
-class BottomButton extends StatelessWidget {
-  BottomButton({this.onTap, this.buttonTitle});
-
-  final Function onTap;
-  final String buttonTitle;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        child: Center(
-          child: Text(
-            buttonTitle,
-            style: largeTextStyle,
-          ),
-        ),
-        color: bottomContainerColour,
-        margin: EdgeInsets.only(top: 10),
-        width: double.infinity,
-        height: bottomContainerHeight,
-      ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({@required this.icon, @required this.onPressed});
-  final IconData icon;
-  final Function onPressed;
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      elevation: 6.0,
-      disabledElevation: 6.0,
-      onPressed: onPressed,
-      constraints: BoxConstraints.tightFor(width: 56, height: 56),
-      shape: CircleBorder(),
-      fillColor: Color(0xFF4C4F5E),
-    );
   }
 }
